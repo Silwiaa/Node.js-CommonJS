@@ -15,6 +15,18 @@ process.stdin.on('readable', function() {
             case '/sayhello':
                 process.stdout.write('hello!\n');
                 break;
+            case '/getOSinfo':
+                var type =.os.type(),
+                    realse = os.relase();
+                
+                if(type==='Darwin') {
+                    type = 'OSX';
+                } else if (type==='Windows_NT') {
+                    type='Windows';
+                }
+                console.log('System:', type);
+                console.log('Relase:', relase);
+                break;
             default:
                 process.stderr.write('Wrong instruction!\n');
         };
