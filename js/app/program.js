@@ -16,8 +16,7 @@ process.stdin.on('readable', function() {
                 process.stdout.write('hello!\n');
                 break;
             case '/getOSinfo':
-                var OSinfo = require('./OSinfo');
-                
+                var OSinfo = require('../modules/OSinfo');
                 OSinfo.print();
                 break;
             default:
