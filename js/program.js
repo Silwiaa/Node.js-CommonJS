@@ -35,6 +35,11 @@ process.stdin.on('readable', function() {
                 //UPTIME
                 var uptime = os.uptime();
                 console.log('Uptime: ~', (uptime/60).toFixed(0),'min');
+                
+                //USERINFO
+                var userInfo = os.userInfo();
+                console.log('User name:', userInfo.username);
+                
                 break;
             default:
                 process.stderr.write('Wrong instruction!\n');
