@@ -16,6 +16,7 @@ process.stdin.on('readable', function() {
                 process.stdout.write('hello!\n');
                 break;
             case '/getOSinfo':
+                // OPERATING AND VERSION SYSTEM
                 var type =.os.type(),
                     realse = os.relase();
                 
@@ -26,6 +27,14 @@ process.stdin.on('readable', function() {
                 }
                 console.log('System:', type);
                 console.log('Relase:', relase);
+                
+                // PROCESSOR MODEL
+                var cpu = os.cpus()[0].model;
+                console.log('CPU model:',cpu);
+                
+                //UPTIME
+                var uptime = os.uptime();
+                console.log('Uptime: ~', (uptime/60).toFixed(0),'min');
                 break;
             default:
                 process.stderr.write('Wrong instruction!\n');
