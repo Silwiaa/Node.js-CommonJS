@@ -1,3 +1,4 @@
+var os = require('os');
 // SET ENCODING UTF-8
 process.stdin.setEncoding('utf-8');
 
