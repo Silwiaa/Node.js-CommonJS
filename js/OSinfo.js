@@ -1,3 +1,5 @@
+var os = require('os');
+
 function getOSinfo() {
     var type = os.type();
     
@@ -6,6 +8,7 @@ function getOSinfo() {
     } else if(type === 'Windows_NT') {
         type = 'Windows';
     }
+    
     var release = os.release(),
         cpu = os.cpus()[0].model,
         uptime = os.uptime(),
@@ -18,3 +21,6 @@ function getOSinfo() {
     console.log('User name:', userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }
+
+//EXPORT getOSinfo
+exports.print = getOSinfo;
